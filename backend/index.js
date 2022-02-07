@@ -124,6 +124,9 @@ app.post('/GetPoints', (req,res) => {
             }
             else {
                 transactions[key].rule = 7
+                transactions[key].points = Math.floor(parseInt(value.amount_cents)*0.01)
+                transactions[key].rule7used = true
+                transactions[key].leftoverpoints = 0
             }
             
             //If its not sc,tm,sb then add the rule seven points 
